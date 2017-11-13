@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+  <head>  
     <meta charset="utf-8">
     <title>Каталог</title>
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
     <header class="main_header">
       <div class="wrapper_central">
         <nav class="main_nav">
 
-          <a class="main_logo">
+          <a class="main_logo main_nav_item">
             <img src=img/logo_main.svg alt="логотип" width="154" height="64">
           </a>
 
-          <ul class="main_nav_list">
-            <li class="main_nav_list_item">
-              <a href="delivery.html">Доставка</a>
-            </li>
+          <ul class="main_nav_list main_nav_item">
             <li class="main_nav_list_item">
               <a>Каталог</a>
-              <ul class="main_nav_catalog_dropdown">
+              <ul class="main_nav_catalog_dropdown not_visible">
                 <li><b>Новинки</b></li>
                 <li><a>Сливочное</a></li>
                 <li class="main_nav_catalog_dropdown_selected"><a>Щербеты</a></li>
@@ -28,25 +26,28 @@
               </ul>
             </li>
             <li class="main_nav_list_item">
+              <a href="delivery.html">Доставка и оплата</a>
+            </li>
+            <li class="main_nav_list_item">
               <a href="about.html">О компании</a>
             </li>
           </ul>
 
-          <div class="user_nav">
+          <div class="user_nav main_nav_item">
             <div class="user_nav_item">
               <button type="button" class="user_nav_button nav_search" name="cite_search"></button>
               <div class="nav_search_form_wrap not_visible">
-                <form class="nav_search_form" action="/" method="get">
+                <form class="nav_search_form" action="https://echo.htmlacademy.ru" method="get">
                   <label for="nav_search_form_input">Поиск</label>
                   <input type="text" id="nav_search_form_input" placeholder="Что ищем?">
                 </form>
               </div>
             </div>
 
-            <div class="user_nav_item">
+            <div class="user_nav_item main_nav_item">
               <button type="button" class="user_nav_button nav_auth" name="auth_start"><span>Вход</span></button>
               <div class="nav_auth_form_wrap not_visible">
-                <form class="nav_auth_form" action="/" method="post">
+                <form class="nav_auth_form" action="https://echo.htmlacademy.ru" method="post">
                   <div class="nav_auth_user_email">
                     <label for="nav_auth_user_email_input">Электронная почта</label>
                     <input type="text" id="nav_auth_user_email_input" name="user_email" placeholder="Электронная почта">
@@ -64,10 +65,10 @@
               </div>
             </div>
 
-            <div class="user_nav_item">
+            <div class="user_nav_item main_nav_item">
               <button type="button" class="user_nav_button nav_cart" name="cart_check"><span>Пусто</span></button>
               <div class="nav_cart_form_wrap not_visible">
-                <form class="nav_cart_form" action="/" method="post">  
+                <form class="nav_cart_form" action="https://echo.htmlacademy.ru" method="post">  
                   <table>
                     <tr class="nav_cart_item">
                       <td>
@@ -112,7 +113,7 @@
     </header>
     
     <main>
-      <h1 class="not_visible">Каталог магазина мороженого</h1>
+      <h1 class="visually_hidden">Каталог магазина мороженого</h1>
       <section class="secondary_nav">
         <div class="wrapper_central">
           <ul class="secondary_nav_breadcrumbs">
@@ -125,8 +126,8 @@
       </section>
       <section class="product_filter">
         <div class="wrapper_central">
-          <h2 class="not_visible">Фильтр каталога продукции</h2>
-          <form class="product_filter_form" action="/" method="get">
+          <h2 class="visually_hidden">Фильтр каталога продукции</h2>
+          <form class="product_filter_form" action="https://echo.htmlacademy.ru" method="get">
             <div class="product_filter_sort">
               <label for="product_filter_sort_select">Сортировка</label>
               <input type="text" list="sort_select_datalist" id="product_filter_sort_select">
@@ -139,53 +140,58 @@
             </div>
             <div class="product_filter_price">
               <label for="product_filter_price_range">Цена: 100 руб. – 500 руб.</label>
-              <input type="range" id="product_filter_price_range"> 
+              <div class="product_filter_price_range">
+                <div class="product_filter_price_range_line">
+                  <div class="product_filter_price_range_control" tabindex="0"></div>
+                  <div class="product_filter_price_range_control" tabindex="0"></div>
+                </div>
+              </div> 
             </div>
             <div class="product_filter_fat_content">
-              <span>Жирность:</span>
-              <ul class="product_filter_fat_content_select">
-                <li>
+              <fieldset>
+                <legend>Жирность:</legend>
+                <label>
                   <input type="radio" name="fat_content_select_item" id="product_filter_fat_content_0">
-                  <label for="product_filter_fat_content_0">0%</label>
-                </li>
-                <li>
+                  <span>0%</span>
+                </label>
+                <label>
                   <input type="radio" name="fat_content_select_item" id="product_filter_fat_content_less10" checked>
-                  <label for="product_filter_fat_content_less10">до 10%</label>
-                </li>
-                <li>
+                  <span>до 10%</span>
+                </label>
+                <label>
                   <input type="radio" name="fat_content_select_item" id="product_filter_fat_content_less30">
-                  <label for="product_filter_fat_content_less30">до 30%</label>
-                </li>
-                <li>
+                  <span>до 30%</span>
+                </label>
+                <label>
                   <input type="radio" name="fat_content_select_item" id="product_filter_fat_content_more30">
-                  <label for="product_filter_fat_content_more30">выше 30%</label>
-                </li>      
-              </ul>
-            </div>
+                  <span>выше 30%</span>
+                </label>
+              </fieldset>
+            </div> 
             <div class="product_filter_fillers">
-              <span>Наполнители</span>
-              <ul class="product_filter_fillers_select">
-                <li>
+              <fieldset>
+                <legend>Наполнители:</legend>
+                <label>
                   <input type="checkbox" name="choco" id="product_filter_fillers_choco" checked>
-                  <label for="product_filter_fillers_choco">шоколадные</label>
-                </li>
-                <li>
-                  <input type="checkbox" name="sugar" id="product_filter_fillers_sugar" checked> 
-                  <label for="product_filter_fillers_sugar">сахарные присыпки</label>
-                </li>
-                <li>
+                  <span>шоколадные</span>
+                </label>
+                <label>
+                  <input type="checkbox" name="sugar" id="product_filter_fillers_sugar" checked>
+                  <span>сахарные присыпки</span>
+                </label>
+                <label>
                   <input type="checkbox" name="fruits" id="product_filter_fillers_fruits">
-                  <label for="product_filter_fillers_fruits">фрукты</label>
-                </li>
-                <li>
+                  <span>фрукты</span>
+                </label>
+                <label>
                   <input type="checkbox" name="syrup" id="product_filter_fillers_syrop">
-                  <label for="product_filter_fillers_syrop">сиропы</label>
-                </li>
-                <li>
+                  <span>сиропы</span>
+                </label>
+                <label>
                   <input type="checkbox" name="jam" id="product_filter_fillers_jam">
-                  <label for="product_filter_fillers_jam">джемы</label>
-                </li>
-              </ul>
+                  <span>джемы</span>
+                </label>
+              </fieldset>
             </div>
             <button class="submit_filter">Применить</button>
           </form>
@@ -194,7 +200,7 @@
 
       <section class="product_result">
         <div class="wrapper_central">
-          <h2 class="not_visible">Каталог продукции</h2>
+          <h2 class="visually_hidden">Каталог продукции</h2>
           <ul class="catalog_list">
 
             <li class="catalog_list_item">
@@ -356,20 +362,28 @@
     </footer>
 
     <section class="feedback">
-      <h2 class="not_visible">Форма обратной связи</h2>
-      <p>Мы обязательно вам ответим!</p>
-      <button type="button" class="feedback_close">Закрыть</button>
-      
-      <label for="feedback_username">Ваше имя</label>
-      <input type="text" placeholder="Как вас зовут?" id="feedback_username">
-      
-      <label for="feedback_usermail">Ваша почта для ответа</label>
-      <input type="email" placeholder="Ваша почта для ответа" id="feedback_usermail">
-      
-      <label for="feedback_usertext">Напишите что-нибудь</label>
-      <textarea rows="3" placeholder="Напишите что-нибудь..." id="feedback_usertext"></textarea>
-      
-      <button class="feedback_submit">Отправить</button>
+      <h2 class="visually_hidden">Форма обратной связи</h2>
+      <form>
+        <p>Мы обязательно вам ответим!</p>
+        <button type="button" class="feedback_close">Закрыть</button>
+        
+        <div class="feedback_username">
+          <label for="feedback_username_input">Ваше имя</label>
+          <input type="text" placeholder="Как вас зовут?" id="feedback_username_input">
+        </div>
+
+        <div class="feedback_usermail">
+          <label for="feedback_usermail_input">Ваша почта для ответа</label>
+          <input type="email" placeholder="Ваша почта для ответа" id="feedback_usermail_input">
+        </div>
+
+        <div class="feedback_usertext">
+          <label for="feedback_usertext_input">Напишите что-нибудь</label>
+          <textarea rows="3" placeholder="Напишите что-нибудь..." id="feedback_usertext_input"></textarea>
+        </div>
+
+        <button class="feedback_submit">Отправить</button>
+      </form>
     </section>
   </body>
 </html>

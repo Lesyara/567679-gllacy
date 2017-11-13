@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">  
     <title>HTML Academy: Глейси</title>
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
     <header class="main_header">
@@ -15,11 +16,8 @@
 
           <ul class="main_nav_list">
             <li class="main_nav_list_item">
-              <a href="delivery.html">Доставка</a>
-            </li>
-            <li class="main_nav_list_item">
-              <a>Каталог</a>
-              <ul class="main_nav_catalog_dropdown">
+              <a href="catalog.html">Каталог</a>
+              <ul class="main_nav_catalog_dropdown not_visible">
                 <li><b>Новинки</b></li>
                 <li><a>Сливочное</a></li>
                 <li class="main_nav_catalog_dropdown_selected"><a>Щербеты</a></li>
@@ -28,17 +26,22 @@
               </ul>
             </li>
             <li class="main_nav_list_item">
+              <a href="delivery.html">Доставка и оплата</a>
+            </li>
+            <li class="main_nav_list_item">
               <a href="about.html">О компании</a>
             </li>
           </ul>
 
           <div class="user_nav">
             <div class="user_nav_item">
-              <button type="button" class="user_nav_button nav_search" name="cite_search"></button>
+              <button type="button" class="user_nav_button" name="cite_search"></button>
               <div class="nav_search_form_wrap not_visible">
-                <form class="nav_search_form" action="/" method="get">
-                  <label for="nav_search_form_input">Поиск</label>
-                  <input type="text" id="nav_search_form_input" placeholder="Что ищем?">
+                <form class="nav_search_form" action="https://echo.htmlacademy.ru" method="get">
+                  <div class="nav_search">
+                    <label for="nav_search_input">Поиск</label>
+                    <input type="text" id="nav_search_input" placeholder="Что ищем?">
+                  </div>
                 </form>
               </div>
             </div>
@@ -46,7 +49,7 @@
             <div class="user_nav_item">
               <button type="button" class="user_nav_button nav_auth" name="auth_start"><span>Вход</span></button>
               <div class="nav_auth_form_wrap not_visible">
-                <form class="nav_auth_form" action="/" method="post">
+                <form class="nav_auth_form" action="https://echo.htmlacademy.ru" method="post">
                   <div class="nav_auth_user_email">
                     <label for="nav_auth_user_email_input">Электронная почта</label>
                     <input type="text" id="nav_auth_user_email_input" name="user_email" placeholder="Электронная почта">
@@ -67,7 +70,7 @@
             <div class="user_nav_item">
               <button type="button" class="user_nav_button nav_cart" name="cart_check"><span>Пусто</span></button>
               <div class="nav_cart_form_wrap not_visible">
-                <form class="nav_cart_form" action="/" method="post">  
+                <form class="nav_cart_form" action="https://echo.htmlacademy.ru" method="post">  
                   <table>
                     <tr class="nav_cart_item">
                       <td>
@@ -112,10 +115,10 @@
     </header>
 
     <main>
-      <h1 class="not_visible">Магазин мороженого Глейси</h1>
+      <h1 class="visually_hidden">Магазин мороженого Глейси</h1>
       <section class="promo">
         <div class="wrapper_central">
-          <h2 class="not_visible">Текущие акции</h2>
+          <h2 class="visually_hidden">Текущие акции</h2>
           <div class="promo_control_wrap">
             <input type="radio" name="promo_control" checked> 
             <input type="radio" name="promo_control">
@@ -141,7 +144,7 @@
 
       <section class="bonus">
         <div class="wrapper_central">
-          <h2 class="not_visible">Бонусы при покупке</h2>
+          <h2 class="visually_hidden">Бонусы при покупке</h2>
           <ul class="bonus_list">
             <li class="bonus_list_item bonus_raspberry">
               <h3>Малинка даром!</h3>
@@ -165,7 +168,7 @@
 
       <section class="catalog">
         <div class="wrapper_central">
-          <h2 class="not_visible">Каталог продукции</h2>
+          <h2 class="visually_hidden">Каталог продукции</h2>
 
           <ul class="catalog_list">
             <li class="catalog_list_item">
@@ -218,7 +221,7 @@
 
       <section class="about_us">
         <div class="wrapper_central">
-          <h2 class="not_visible">
+          <h2 class="visually_hidden">
             Магазин Глэйси — это онлайн- и офлайн-магазин по продаже 
             мороженого собственного производства на развес
           </h2>
@@ -244,7 +247,7 @@
 
       <section class="communication">
         <div class="wrapper_central">
-          <h2 class="not_visible">Блог и рассылка</h2>
+          <h2 class="visually_hidden">Блог и рассылка</h2>
           <article class="communication_blog">
             <p>Новое в нашем блоге</p>
             <h3><a>10 способов сервировки фруктовых щербетов к столу</a></h3>
@@ -264,7 +267,7 @@
       </section>
 
       <section class="contacts">
-        <h2 class="not_visible">Контакты</h2>
+        <h2 class="visually_hidden">Контакты</h2>
         <div class="contacts_map">
           <img src="img/map.png" width="1200" height="430" alt="адрес ул. Большая Конюшенная 19/8, Санкт-Петербург">
         </div>
@@ -304,20 +307,28 @@
       </div>
     </footer>
     <section class="feedback">
-      <h2 class="not_visible">Форма обратной связи</h2>
-      <p>Мы обязательно вам ответим!</p>
-      <button type="button" class="feedback_close">Закрыть</button>
-      
-      <label for="feedback_username">Ваше имя</label>
-      <input type="text" placeholder="Как вас зовут?" id="feedback_username">
-      
-      <label for="feedback_usermail">Ваша почта для ответа</label>
-      <input type="email" placeholder="Ваша почта для ответа" id="feedback_usermail">
-      
-      <label for="feedback_usertext">Напишите что-нибудь</label>
-      <textarea rows="3" placeholder="Напишите что-нибудь..." id="feedback_usertext"></textarea>
-      
-      <button class="feedback_submit">Отправить</button>
+      <h2 class="visually_hidden">Форма обратной связи</h2>
+      <form>
+        <p>Мы обязательно вам ответим!</p>
+        <button type="button" class="feedback_close">Закрыть</button>
+        
+        <div class="feedback_username">
+          <label for="feedback_username_input">Ваше имя</label>
+          <input type="text" placeholder="Как вас зовут?" id="feedback_username_input">
+        </div>
+
+        <div class="feedback_usermail">
+          <label for="feedback_usermail_input">Ваша почта для ответа</label>
+          <input type="email" placeholder="Ваша почта для ответа" id="feedback_usermail_input">
+        </div>
+
+        <div class="feedback_usertext">
+          <label for="feedback_usertext_input">Напишите что-нибудь</label>
+          <textarea rows="3" placeholder="Напишите что-нибудь..." id="feedback_usertext_input"></textarea>
+        </div>
+
+        <button class="feedback_submit">Отправить</button>
+      </form>
     </section>
   </body>
 </html>
