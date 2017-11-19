@@ -19,6 +19,15 @@ a:hover, a:focus, a:active {
     color:#ffbc9e;
 }
 
+.user_input{
+    border:1px solid #d3d3d2;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: normal;
+    color: #323232;
+}
+
+
 .wrapper_central {
     /*width: 1150px;
     margin: 0 auto;*/
@@ -43,32 +52,57 @@ a:hover, a:focus, a:active {
     font-weight: bold;
 }
 
-.nav_list_item_name:hover {
+.main_nav_list_item>a:hover {
     padding: 10px;
     color: #323232;
     border-radius: 20px;
     background-color: #f8f7f4;
 }
 
-.nav_list_item_name:active {
+.main_nav_list_item>a:active {
     box-shadow: inset 0px 2px 1px 0px #323232;
 }
 
-.main_nav_catalog_dropdown{
+.catalog_menu_dropdown{
     list-style: none;
     color: #323232;
     background-color: #f8f7f4;
 }
 
-.main_nav_catalog_dropdown a:hover, .main_nav_catalog_dropdown a:focus{
+.catalog_menu_dropdown a:hover, .main_nav_catalog_dropdown a:focus{
     color: #323232;
     background-color: #fbded7; 
 }
 
-.main_nav_catalog_dropdown a:active {
+.catalog_menu_dropdown a:active {
     color: #323232;
     background-color: #f6b5a5; 
 }
+
+.catalog_menu_dropdown {
+    display: none;
+    position: relative;
+}
+
+.catalog_menu:hover .catalog_menu_dropdown{
+    display: inline-block;
+    position: absolute;
+    top: 105px;
+    left: 40px;
+}
+
+.user_nav_item {
+    position: relative;
+}
+
+.nav_form_wrap {
+    position: absolute;
+}
+
+.user_nav_item:hover .nav_form_wrap{
+    display: inline-block;
+}
+
 
 .user_nav_button {
     padding: 10px;
@@ -86,41 +120,24 @@ a:hover, a:focus, a:active {
     background-color: #f8f7f4;
 }
 
-.nav_search_form_wrap {
-    background-color: #f8f7f4;
-}
-
-.nav_auth_form_wrap {
-    background-color: #f8f7f4;
-}
-
-.nav_auth_links_item {
-    font-size: 13px;
-    line-height: 24px;
-    color: #323232;
-    background-color: #f8f7f4;
-}
-
-.nav_cart_form_wrap {
+.nav_form_wrap {
     font-size: 13px;
     line-height: 16px;
     font-weight: normal;
     color: #323232;
     background-color: #f8f7f4;
+    display: none;
 }
 
-.user_nav_button.empty::before {
-    content: "Пусто";
-}
-
-.user_nav_button.full::before {
-    content: "2 товара";
-}
-
-.nav_cart_form_wrap b {
+.nav_form_wrap b {
     font-size: 15px;
     line-height: 18px;
     font-weight: bold;
+}
+
+.nav_auth_links_item {
+    line-height: 24px;
+    text-decoration: underline;
 }
 
 .cart_item_kilo_price{
@@ -153,6 +170,25 @@ a:hover, a:focus, a:active {
     font-size: 32px;
     line-height: 44px;
 }
+
+input[name="promo_control"] {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    color: transparent;
+    border-radius: 50%;    
+}
+
+input[name="promo_control"]:checked {
+    background: #ffffff;
+}
+
+input[name="promo_control"]:hover {
+    background: rgba(248,247,244,0.4);
+}
+
+
 
 .button_go {
     padding: 10px 20px;
@@ -214,6 +250,7 @@ a:hover, a:focus, a:active {
 
 .catalog_list_item:hover {
    background-color: rgba(248, 247, 244, 0.2);
+   box-shadow: 0 0 20px 0px rgba(0,0,0,0.4);
 }
 
 .catalog_list_item_img_container div {
@@ -228,8 +265,17 @@ a:hover, a:focus, a:active {
     font-weight: bold;
 }
 
+
 .catalog_list_item_hover {
     text-align: center;
+}  
+
+.catalog_list_item_hover_button {
+    display: none;
+}
+
+.catalog_list_item:hover  .catalog_list_item_hover_button{
+    display: inline-block;
 }   
 
 .about_us {
@@ -305,6 +351,19 @@ a:hover, a:focus, a:active {
     font-weight: 500;
 }
 
+.catalog_page .catalog_menu_control {
+    background-color: #d07058;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+
+.catalog_page .catalog_menu_dropdown_selected {
+    background-color: #d07058;
+    color: #ffffff;
+}
+
 .catalog_page .secondary_nav_breadcrumbs {
     list-style: none;
     font-size: 14px;
@@ -323,6 +382,10 @@ a:hover, a:focus, a:active {
     line-height: 18px;
     font-weight: 500;
     color: #ffffff;
+}
+
+.product_filter fieldset {
+    border: none;
 }
 
 .catalog_page .product_filter_price_range_line {
@@ -365,23 +428,123 @@ a:hover, a:focus, a:active {
     line-height: 16px;
 }
 
-.product_result_page_nav_list {
+.catalog_page .product_filter_control {
+    background: rgba(248,247,244,0.2);
+    display: inline-block;
+    border-radius: 20px;
+}
+
+.catalog_page .product_filter_price_range {
+    padding: 10px; /*временно, чтобы было видно бэкграунд*/
+}
+
+.catalog_page .product_filter_control input[type="radio"] {
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    background: url("../img/radio-off-80.png") no-repeat center center;
+    background-size: cover;
+}
+
+.catalog_page .product_filter_control input[type="radio"]:checked {
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    background: url("../img/radio-on-100.svg") no-repeat center center;
+    background-size: cover;
+}
+
+.catalog_page .product_filter_control input[type="radio"]:hover {
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    background: url("../img/radio-off-100.svg") no-repeat center center;
+    background-size: cover;
+}
+
+.catalog_page .product_filter_control input[type="radio"]:disabled {
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    background: url("../img/radio-off-40.svg") no-repeat center center;
+    background-size: cover;
+}
+
+.catalog_page .product_filter_control input[type="checkbox"] {
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    background: url("../img/checkbox-off-80.png") no-repeat center center;
+    background-size: cover;
+}
+
+.catalog_page .product_filter_control input[type="checkbox"]:checked {
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    background: url("../img/checkbox-on-100.svg") no-repeat center center;
+    background-size: cover;
+}
+
+.catalog_page .product_filter_control input[type="checkbox"]:hover {
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    background: url("../img/checkbox-off-100.svg") no-repeat center center;
+    background-size: cover;
+}
+
+.catalog_page .product_filter_control i nput[type="checkbox"]:disabled {
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    background: url("../img/checkbox-on-40.png") no-repeat center center;
+    background-size: cover;
+}
+
+.catalog_page .submit_filter {
+    border: 2px solid #ffffff;
+    font: inherit;
+    color: inherit;
+}
+
+.catalog_page .submit_filter:hover {
+    color: #323232;
+    background-color: #f8f7f4;
+}
+
+.catalog_page .submit_filter:active {
+    border: none;
+    box-shadow: inset 0px 2px 1px 0px #323232;
+}
+
+.catalog_page .product_filter_sort select {
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 20px;
+    height: 30px;
+    background: rgba(248,247,244,0.2);
+    color: #ffffff;
+}
+
+.catalog_page .product_result_page_nav_list {
     list-style: none;
     font-size: 16px;
     line-height: 18px;
     font-weight: 500;
 }
 
-.product_result_page_nav_list a:hover {
+.catalog_page .product_result_page_nav_list a:hover {
     padding: 5px 10px;
     border-radius: 50%;
     color: #ffffff;
     background-color: rgba(255,255,255,0.2);
  }
 
-.product_result_page_nav_selected {
+.catalog_page .product_result_page_nav_selected {
     padding: 5px 10px;
     border-radius: 50%;
     color: #323232;
     background-color: #ffffff;  
 } 
+

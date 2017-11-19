@@ -4,8 +4,8 @@
     <meta charset="utf-8">  
     <title>HTML Academy: Глейси</title>
     <link href="css/normalize.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&amp;subset=cyrillic" rel="stylesheet">
   </head>
   <body>
     <header class="main_header">
@@ -17,20 +17,20 @@
           </a>
 
           <ul class="main_nav_list">
-            <li class="main_nav_list_item">
-              <a class="nav_list_item_name" href="catalog.html">Каталог</a>
-              <ul class="main_nav_catalog_dropdown">
+            <li class="main_nav_list_item catalog_menu">
+              <a class="catalog_menu_control" href="catalog.html">Каталог</a>
+              <ul class="catalog_menu_dropdown">
                 <li><b>Новинки</b></li>
-                <li><a>Сливочное</a></li>
+                <li><a class="catalog_menu_dropdown_selected">Сливочное</a></li>
                 <li><a>Щербеты</a></li>
                 <li><a>Фруктовый лед</a></li>
                 <li><a>Мелорин</a></li>
               </ul>
             </li>
-            <li class="main_nav_list_item">
+            <li class="main_nav_list_item delivery">
               <a href="delivery.html">Доставка и оплата</a>
             </li>
-            <li class="main_nav_list_item">
+            <li class="main_nav_list_item about_company">
               <a href="about.html">О компании</a>
             </li>
           </ul>
@@ -38,11 +38,11 @@
           <div class="user_nav">
             <div class="user_nav_item">
               <button type="button" class="user_nav_button" name="cite_search"></button>
-              <div class="nav_search_form_wrap">
+              <div class="nav_form_wrap">
                 <form class="nav_search_form" action="https://echo.htmlacademy.ru" method="get">
                   <div class="nav_search">
-                    <label for="nav_search_input">Поиск</label>
-                    <input type="text" id="nav_search_input" placeholder="Что ищем?">
+                    <label class="visually_hidden" for="nav_search_input">Поиск</label>
+                    <input class="user_input" type="text" id="nav_search_input" placeholder="Что ищем?">
                   </div>
                 </form>
               </div>
@@ -50,15 +50,15 @@
 
             <div class="user_nav_item">
               <button type="button" class="user_nav_button nav_auth" name="auth_start"><span>Вход</span></button>
-              <div class="nav_auth_form_wrap">
+              <div class="nav_form_wrap">
                 <form class="nav_auth_form" action="https://echo.htmlacademy.ru" method="post">
                   <div class="nav_auth_user_email">
-                    <label for="nav_auth_user_email_input">Электронная почта</label>
-                    <input type="text" id="nav_auth_user_email_input" name="user_email" placeholder="Электронная почта">
+                    <label class="visually_hidden" for="nav_auth_user_email_input">Электронная почта</label>
+                    <input class="user_input" type="text" id="nav_auth_user_email_input" name="user_email" placeholder="Электронная почта">
                   </div>
                   <div class="nav_auth_user_password">
-                    <label for="nav_auth_user_password_input">Пароль</label>
-                    <input type="password" id="nav_auth_user_password_input" name="user_password" placeholder="Пароль"> 
+                    <label class="visually_hidden" for="nav_auth_user_password_input">Пароль</label>
+                    <input class="user_input" type="password" id="nav_auth_user_password_input" name="user_password" placeholder="Пароль"> 
                   </div>
                   <div class="nav_auth_links">
                     <a class="nav_auth_links_item">Забыли пароль?</a>
@@ -70,41 +70,7 @@
             </div>
 
             <div class="user_nav_item">
-              <button type="button" class="user_nav_button nav_cart empty" name="cart_check"></button>
-              <div class="nav_cart_form_wrap">
-                <form class="nav_cart_form" action="https://echo.htmlacademy.ru" method="post">  
-                  <table>
-                    <tr class="nav_cart_item">
-                      <td>
-                        <button class="nav_cart_item_close_button">Закрыть</button>
-                      </td>
-                      <td>
-                        <img src="img/ice_cream_cart_1.jpg" width="33" height="33" alt="пломбир с апельсиновым джемом">
-                      </td>
-                      <td>
-                        <a>Пломбир с апельсиновым джемом</a>
-                      </td>
-                      <td>1,5 кг х <span class="cart_item_kilo_price">200 руб.</span></td>
-                      <td>300 руб.</td>
-                    </tr>
-                    <tr class="nav_cart_item">
-                      <td>
-                        <button class="nav_cart_item_close_button">Закрыть</button>
-                      </td>
-                      <td>
-                        <img src="img/ice_cream_cart_2.jpg" width="33" height="33" alt="клубничный пломбир с присыпкой из белого шоколада">
-                      </td>
-                      <td>
-                        <a>Клубничный пломбир с присыпкой из белого шоколада</a>
-                      </td>
-                      <td>1,5 кг х <span class="cart_item_kilo_price">300 руб.</span></td>
-                      <td>450 руб.</td>   
-                    </tr>
-                  </table>
-                  <b>Итого 750 руб.</b>
-                  <button class="nav_cart_form_submit_button button_go" name="cart_submit" type="submit">Оформить заказ</button>
-                </form>
-              </div>
+              <button type="button" class="user_nav_button nav_cart empty" name="cart_check"><span>Пусто</span></button>
             </div>
           </div>
         </nav>
@@ -259,8 +225,8 @@
                 Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит.
                 Обещаем не спамить и не слать всякой ненужной ерунды. Честно =) 
               </p>
-              <label for="communication_mailing_usermail">Электронная почта</label>
-              <input type="email" placeholder="Электронная почта" id="communication_mailing_usermail">
+              <label class="visually_hidden" for="communication_mailing_usermail">Электронная почта</label>
+              <input class="user_input" type="email" placeholder="Электронная почта" id="communication_mailing_usermail">
               <button class="button_go" type="submit">Отправить</button>
             </form>
           </div>
@@ -314,18 +280,18 @@
         <button type="button" class="feedback_close">Закрыть</button>
         
         <div class="feedback_username">
-          <label for="feedback_username_input">Ваше имя</label>
-          <input type="text" placeholder="Как вас зовут?" id="feedback_username_input">
+          <label class="visually_hidden" for="feedback_username_input">Ваше имя</label>
+          <input class="user_input" type="text" placeholder="Как вас зовут?" id="feedback_username_input">
         </div>
 
         <div class="feedback_usermail">
-          <label for="feedback_usermail_input">Ваша почта для ответа</label>
-          <input type="email" placeholder="Ваша почта для ответа" id="feedback_usermail_input">
+          <label class="visually_hidden" for="feedback_usermail_input">Ваша почта для ответа</label>
+          <input class="user_input" type="email" placeholder="Ваша почта для ответа" id="feedback_usermail_input">
         </div>
 
         <div class="feedback_usertext">
-          <label for="feedback_usertext_input">Напишите что-нибудь</label>
-          <textarea rows="3" placeholder="Напишите что-нибудь..." id="feedback_usertext_input"></textarea>
+          <label class="visually_hidden" for="feedback_usertext_input">Напишите что-нибудь</label>
+          <textarea class="user_input" rows="3" placeholder="Напишите что-нибудь..." id="feedback_usertext_input"></textarea>
         </div>
 
         <button class="feedback_submit button_go" type="submit">Отправить</button>
