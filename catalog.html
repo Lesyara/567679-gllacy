@@ -9,8 +9,8 @@
   </head>
   <body class="catalog_page">
     <header class="main_header">
-      <div class="wrapper_central">
-        <nav class="main_nav">
+      <nav class="main_nav">
+        <div class="wrapper_central">
           <a class="main_logo main_nav_item" href="index.html">
             <img src=img/logo_main.svg alt="логотип" width="154" height="64">
           </a>
@@ -104,13 +104,13 @@
               </div>
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
 
-        <p class="phone_contacts">
-          <span>С 10 до 20, ежедневно</span><br>
-          <span>8 812 450-25-25</span>
-        </p>
-      </div>
+      <p class="phone_contacts">
+        <span>С 10 до 20, ежедневно</span><br>
+        <span>8 812 450-25-25</span>
+      </p>
     </header>
     
     <main>
@@ -119,7 +119,9 @@
         <div class="wrapper_central">
           <ul class="secondary_nav_breadcrumbs">
             <li><a href="index.html">Главная</a></li>
+            <li><span>»</span></li>
             <li><a>Каталог</a></li>
+            <li><span>»</span></li>
             <li>Сливочное</li>
           </ul>
           <h2>Сливочное мороженое</h2>
@@ -131,13 +133,11 @@
           <form class="product_filter_form" action="https://echo.htmlacademy.ru" method="get">
             <div class="product_filter_sort">
               <label for="product_filter_sort_select" class="filter_criteria_name">Сортировка</label>
-              <select id="product_filter_sort_select product_filter_control">
-                <optgroup class="product_filter_sort_option">
-                  <option>по популярности</option>
-                  <option>сначала недорогие</option>
-                  <option>сначала дорогие</option>
-                  <option>по жирности</option>
-                </optgroup>
+              <select class="product_filter_control" id="product_filter_sort_select">
+                <option>по популярности</option> 
+                <option>сначала недорогие</option>
+                <option>сначала дорогие</option>
+                <option>по жирности</option>
               </select>             
             </div>
             <div class="product_filter_price">
@@ -199,7 +199,7 @@
                 </div>
               </fieldset>
             </div>
-            <button class="submit_filter product_filter_control" type="submit">Применить</button>
+            <button class="submit_filter" type="submit">Применить</button>
           </form>
         </div>
       </section>
@@ -333,13 +333,13 @@
           </ul>
           <div class="product_result_page_nav">
             <ul class="product_result_page_nav_list">
-              <li><a class="product_result_page_nav_back">назад</a></li>
-              <li><a class="product_result_page_nav_selected">1</a></li>
-              <li><a>2</a></li>
-              <li><a>3</a></li>
-              <li><a>4</a></li>
-              <li><a>5</a></li>
-              <li><a class="product_result_page_nav_forward">вперед</a></li>
+              <li class="product_result_page_nav_back"><a><span class="visually_hidden">назад</span><</a></li>
+              <li class="product_result_page_nav_list_item page_selected"><a>1</a></li>
+              <li class="product_result_page_nav_list_item"><a>2</a></li>
+              <li class="product_result_page_nav_list_item"><a>3</a></li>
+              <li class="product_result_page_nav_list_item"><a>4</a></li>
+              <li class="product_result_page_nav_list_item"><a>5</a></li>
+              <li class="product_result_page_nav_forward"><a ><span class="visually_hidden">вперед</span>></a></li>
             </ul>
           </div>
         </div>
@@ -349,10 +349,10 @@
     <footer class="footer_main">
       <div class="wrapper_central">
         <ul class="company_social">
-          <li class="twitter company_social_item"><a>twitter</a></li>
-          <li class="inst company_social_item"><a>instagram</a></li>
-          <li class="fb company_social_item"><a>facebook</a></li>
-          <li class="vk company_social_item"><a>vkontakte</a></li>
+          <li class="twitter company_social_item"><a class="visually_hidden">twitter</a></li>
+          <li class="inst company_social_item"><a class="visually_hidden">instagram</a></li>  
+          <li class="fb company_social_item"><a class="visually_hidden">facebook</a></li>
+          <li class="vk company_social_item"><a class="visually_hidden">vkontakte</a></li>
         </ul>
         <ul class="company_info">
           <li class="company_info_suppliers"><a><b>Для поставщиков</b></a></li>
@@ -361,7 +361,7 @@
           <li><a>Экологические стандарты</a></li>
         </ul>
         <div class="made_by">
-          <img src="img/logo-htmlacademy-small.svg" alt="логотип студии" width="110" height="45">
+          <img src="img/logo-htmlacademy.svg" alt="логотип студии" width="110" height="45">
           <p>Сделано в <a href="https://htmlacademy.ru">HTML Academy</a> © 2017</p>
         </div>
       </div>
