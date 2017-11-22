@@ -595,22 +595,21 @@ p.about_us_fact:nth-of-type(4) {
 }
 
 .catalog_page .product_filter_form>div{
-    position: relative; 
     min-height: 58px;
 }
 
 .catalog_page .product_filter_control {
-    position: absolute;
+    /*position: absolute;
     top: 22px;
-    left: 0;
+    left: 0;*/
     background: rgba(248,247,244,0.2);
     display: inline-block;
     border-radius: 20px;
 }
 
 .catalog_page .filter_criteria_name {
-    position: absolute;
-    top: 0;
+    position: relative;
+    top: -9px;
     left: 16px;
     font-size: 14px;
     line-height: 16px;
