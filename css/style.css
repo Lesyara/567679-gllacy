@@ -48,9 +48,10 @@ img {
 }
 
 .button_go {
-    padding: 10px 20px;
+    padding: 8px 18px 12px;
     border: none;
     border-radius: 30px;
+    font-family: "Roboto", "Arial", sans-serif;
     font-size: 18px;
     line-height: 24px; 
     font-weight: bold; 
@@ -445,43 +446,60 @@ a.catalog_menu_dropdown_novelties {
 
 .nav_cart .nav_form_wrap {
     width: 540px;
+    display: block;
 }
 
 .nav_cart_form {
-    padding: 20px 15px;
+    padding: 18px 16px 21px;
 }
 
-.nav_cart_form table {
+.nav_cart_form ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.nav_cart_form > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    min-height: 105px;
     width: 100%;
     border-bottom: 1px solid #cacac7;
-    padding-bottom: 10px;
-    border-spacing: 0px 8px;
 }
 
-.nav_cart_item td:first-child {
-    padding-right: 10px;
+
+
+.nav_cart_item {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    width: 508px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
 }
 
-.nav_cart_item td:nth-child(2) {
-    width: 42px;
+.nav_cart_item li:nth-child(3) {
+    width: 216px;
 }
 
-.nav_cart_item td:nth-child(3) {
-    margin-left: -8px;
+.nav_cart_item li:nth-child(5) {
+    margin-right: 18px;
 }
 
-.nav_cart_item td:nth-child(4) {
-    width: 118px;
+
+.nav_cart_item a {
+    text-decoration: none;
 }
 
-.nav_cart_item td:nth-child(5) {
-    width: 70px;
-}
+
 
 .nav_cart_item_close_button {
     font-size: 0;
     background-color: transparent;
     border: 0;
+    padding: 0;
     cursor: pointer;
 }
 
@@ -629,10 +647,11 @@ a.catalog_menu_dropdown_novelties {
 }
 
 .promo_button {
-    margin-top: 31px;
-    padding: 10px 35px;
+    margin-top: 32px;
+    padding: 7px 40px 12px;
     font-size: 32px;
     line-height: 44px;
+    text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
 }
 
 .button_go:hover,.button_go:focus {
@@ -711,9 +730,11 @@ a.catalog_menu_dropdown_novelties {
 .bonus_submit {
     position: absolute;
     right: 22px;
-    bottom: 26px;
+    bottom: 24px;
+    padding: 10px 22px 12px;
     font-size: 18px;
     line-height: 24px;
+
 }
 
 /*---------------catalog--------------------*/
@@ -784,7 +805,7 @@ a.catalog_menu_dropdown_novelties {
     position: absolute;
     top: -6px;
     left: -13px;
-    height: 405px;
+    min-height: 405px;
     width: 293px;
     border-radius: 5px;
     padding-top: 285px;
@@ -1043,7 +1064,8 @@ p.about_us_fact:nth-of-type(4) {
 
 .contacts_feedback {
     display: block;
-    margin: 0px auto;   
+    margin: 0px auto;
+    padding: 8px 27px 12px;   
 }
 
 .footer_main {
@@ -1244,6 +1266,7 @@ p.about_us_fact:nth-of-type(4) {
     display: block;
     margin-left: auto;
     margin-top: 19px;
+
 }
 
 /*----------CATALOG PAGE-----------*/
