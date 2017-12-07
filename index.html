@@ -323,9 +323,12 @@
       var email_field = document.querySelector(".feedback_usermail input");
       var text_field = document.querySelector(".feedback_usertext textarea");
       var dark_wrap = document.querySelector(".darkening_wrapper");
-      var saved_login = localStorage.getItem("userLogin");
-      var saved_mail = localStorage.getItem("userMail");    
       
+      if(localStorage) {
+        var saved_login = localStorage.getItem("userLogin");
+        var saved_mail = localStorage.getItem("userMail");    
+      }
+
       open_button.addEventListener("click", function(evt) {
         evt.preventDefault();
         feedback_form.classList.add("feedback_show"); 
@@ -356,11 +359,13 @@
         if( !username_field.value || !email_field.value ) {
           evt.preventDefault();
           feedback_form.classList.remove("feedback_submit_error");
+          feedback_form.offsetWidth = feedback_form.offsetWidth;
           feedback_form.classList.add("feedback_submit_error");
         }
         else if (!text_field.value) {
           evt.preventDefault();
           feedback_form.classList.remove("feedback_submit_error");
+          feedback_form.offsetWidth = feedback_form.offsetWidth;
           feedback_form.classList.add("feedback_submit_error");
         }
         else {
