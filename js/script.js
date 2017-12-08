@@ -59,9 +59,9 @@ feedback_form.addEventListener("submit", function(evt) {
 window.addEventListener("keydown",function(evt) {
   if(evt.keyCode == 27) {
     if (feedback_form.classList.contains("feedback_show") && dark_wrap.classList.contains("darkening_on")) {
-        feedback_form.classList.remove("feedback_show");
-        feedback_form.classList.remove("feedback_submit_error");
-        dark_wrap.classList.remove("darkening_on");
+      feedback_form.classList.remove("feedback_show");
+      feedback_form.classList.remove("feedback_submit_error");
+      dark_wrap.classList.remove("darkening_on");
     }
   }
 });
